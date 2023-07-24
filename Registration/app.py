@@ -35,7 +35,7 @@ class User(db.Document):
 @app.route("/")
 def hello_world():
     return  """
-    <a href="{{ url_for('register') }}">Register</a>
+    <a href="/register">Register</a>
     """
 
 @app.route("/register", methods=["GET", "POST"])
