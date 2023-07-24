@@ -1,5 +1,4 @@
 from pymongo import MongoClient
-
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_mongoengine import MongoEngine
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -34,9 +33,7 @@ class User(db.Document):
 
 @app.route("/")
 def hello_world():
-    return  """
-    <a href="{{ url_for('register') }}">Register</a>
-    """
+    return redirect(url_for("register"))
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
